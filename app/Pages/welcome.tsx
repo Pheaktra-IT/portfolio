@@ -2,6 +2,7 @@ import React from "react";
 import { Github, Linkedin, Mail, ArrowDown, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../Contexts/LanguageContext";
+import profile from "../Assets/profile.jpg";
 
 const Welcome: React.FC = () => {
   const { t } = useLanguage();
@@ -30,8 +31,12 @@ const Welcome: React.FC = () => {
         <div className="max-w-3xl mx-auto relative z-10">
           {/* Profile Image */}
           <div className="mb-8">
-            <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full bg-white dark:bg-gray-800 flex items-center justify-center text-2xl sm:text-3xl font-bold text-gray-600 dark:text-gray-300 border-4 border-white dark:border-gray-700 shadow-xl backdrop-blur-sm">
-              JD
+            <div className="w-32 h-32 sm:w-32 sm:h-32 mx-auto rounded-full bg-white dark:bg-gray-800 flex items-center justify-center text-2xl sm:text-3xl font-bold text-gray-600 dark:text-gray-300 border-4 border-white dark:border-gray-700 shadow-xl backdrop-blur-sm">
+              <img
+                src={profile}
+                alt="Profile"
+                className="w-full h-full rounded-full object-cover items-center justify-center"
+              />
             </div>
           </div>
 

@@ -38,19 +38,19 @@ const Contact: React.FC = () => {
     {
       icon: <Mail size={20} />,
       title: t("email"),
-      value: "john.doe@example.com",
-      link: "mailto:john.doe@example.com",
+      value: "chheangpheaktra168@gmail.com",
+      link: "mailto:chheangpheaktra168@gmail.com",
     },
     {
       icon: <Phone size={20} />,
       title: t("phone"),
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      value: "+855 093237047",
+      link: "tel:+855093237047",
     },
     {
       icon: <MapPin size={20} />,
       title: t("location"),
-      value: "San Francisco, CA",
+      value: "Phnom Penh city, Cambodia",
       link: "#",
     },
   ];

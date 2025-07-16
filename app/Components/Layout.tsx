@@ -1,5 +1,7 @@
 import React from "react";
-import Header from "./Header";
+import { ThemeProvider } from "../Contexts/ThemeContext";
+import { LanguageProvider } from "../Contexts/LanguageContext";
+import Header from "../Components/Header";
 import Footer from "./Footer";
 
 interface LayoutProps {
@@ -8,11 +10,13 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <>
-      <Header />
-      <main className="pt-16">{children}</main>
-      <Footer />
-    </>
+    <ThemeProvider>
+      <LanguageProvider>
+        <Header />
+        <main className="pt-16">{children}</main>
+        <Footer />
+      </LanguageProvider>
+    </ThemeProvider>
   );
 };
 

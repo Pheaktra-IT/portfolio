@@ -35,7 +35,7 @@ const translations = {
       "With a background in both computer science and design, I bring a unique perspective to every project. I believe that great software is not just about functionality—it's about creating experiences that users love and remember.",
     aboutText2:
       "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community through blog posts and mentoring.",
-    projects: "Projects",
+
     years: "Years",
     clients: "Clients",
     technologies: "Technologies",
@@ -83,6 +83,11 @@ const translations = {
     footerTitle: "John Doe",
     footerSubtitle: "Full-Stack Developer & UI/UX Designer",
     allRights: "All rights reserved",
+
+    // Education Section
+    educationTitle: "Education",
+    educationSubtitle: "My academic journey and qualifications",
+    achievements: "Key Achievements",
   },
   km: {
     // Navigation
@@ -112,7 +117,6 @@ const translations = {
       "ជាមួយនឹងប្រវត្តិក្នុងវិទ្យាសាស្ត្រកុំព្យូទ័រ និងការរចនា ខ្ញុំនាំយកទស្សនៈតែមួយគត់ទៅកាន់គម្រោងនីមួយៗ។ ខ្ញុំជឿថាកម្មវិធីល្អមិនត្រឹមតែអំពីមុខងារទេ—វាអំពីការបង្កើតបទពិសោធន៍ដែលអ្នកប្រើប្រាស់ស្រលាញ់ និងចងចាំ។",
     aboutText2:
       "នៅពេលដែលខ្ញុំមិនកំពុងសរសេរកូដ អ្នកអាចរកឃើញខ្ញុំកំពុងស្វែងរកបច្ចេកវិទ្យាថ្មី ចូលរួមចំណែកដល់គម្រោង open-source ឬចែករំលែកចំណេះដឹងជាមួយសហគមន៍អ្នកអភិវឌ្ឍន៍តាមរយៈការសរសេរប្លុក និងការណែនាំ។",
-    projects: "គម្រោង",
     years: "ឆ្នាំ",
     clients: "អតិថិជន",
     technologies: "បច្ចេកវិទ្យា",
@@ -155,9 +159,14 @@ const translations = {
     sendBtn: "ផ្ញើសារ",
 
     // Footer
-    footerTitle: "ចន ដូ",
-    footerSubtitle: "អ្នកអភិវឌ្ឍន៍ Full-Stack និង UI/UX Designer",
+    footerTitle: "ឈាង ភក្រ្តា",
+    footerSubtitle: "អ្នកអភិវឌ្ឍន៍ Front-End Developer និង UI/UX Designer",
     allRights: "រក្សាសិទ្ធិគ្រប់យ៉ាង",
+
+    // Education Section
+    educationTitle: "ការសិក្សា",
+    educationSubtitle: "ដំណើរការសិក្សា និងគុណវុឌ្ឍិរបស់ខ្ញុំ",
+    achievements: "សមិទ្ធិផលសំខាន់ៗ",
   },
 };
 

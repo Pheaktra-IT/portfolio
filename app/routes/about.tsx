@@ -3,6 +3,7 @@ import About from "../Pages/About";
 import { LanguageProvider } from "~/Contexts/LanguageContext";
 import Layout from "~/Components/Layout";
 import { ThemeProvider } from "~/Contexts/ThemeContext";
+import Loading from "~/Components/Loading";
 
 export function meta({}: Route.MetaArgs) {
   return [

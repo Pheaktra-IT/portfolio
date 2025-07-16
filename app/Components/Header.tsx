@@ -3,6 +3,7 @@ import { Menu, X, Moon, Sun, Globe } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "../Contexts/ThemeContext";
 import { useLanguage } from "../Contexts/LanguageContext";
+import Loading from "./Loading";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,6 +11,31 @@ const Header: React.FC = () => {
   const { isDark, toggleTheme } = useTheme();
   const { language, toggleLanguage, t } = useLanguage();
   const location = useLocation();
+  const [loading, setLoading] = useState(true);
+
+  // All hooks must be called before any return!
+  useEffect(() => {
+    setLoading(true);
+    const timeoutId = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    return () => clearTimeout(timeoutId);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const isActive = (path: string) => location.pathname === path;
+
+  // Now you can conditionally return
+  if (loading) {
+    return <Loading />;
+  }
 
   const navItems = [
     { id: "/", label: t("home") },
@@ -20,22 +46,11 @@ const Header: React.FC = () => {
     { id: "/contact", label: t("contact") },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const isActive = (path: string) => location.pathname === path;
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg shadow-sm border-b border-gray-100 dark:border-gray-800"
+          ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg shadow-sm border-b border-gray-100 dark:border-gray-800 dark:text-white text-gray-900"
           : "bg-transparent"
       }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,20 +1,17 @@
 @import "tailwindcss";
-
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-html,
-body {
-  @apply bg-white dark:bg-gray-950;
-
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
-}
-
 /* Custom animations and styles */
+/* Add to your <head> */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+.dark {
+  --tw-bg-opacity: 1;
+  background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
+}
+html{
+  font-family: "Roboto", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 @keyframes blob {
   0% {
     transform: translate(0px, 0px) scale(1);
@@ -44,22 +41,24 @@ body {
 
 /* Grid pattern background */
 .bg-grid-pattern {
-  background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 
 /* Dark mode grid pattern */
 .dark .bg-grid-pattern {
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    ),
     linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
 }
 
 /* Smooth transitions for all elements */
 * {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
@@ -86,7 +85,7 @@ button:focus,
 input:focus,
 textarea:focus,
 select:focus {
-  outline: 2px solid theme('colors.blue.500');
+  outline: 2px solid theme("colors.blue.500");
   outline-offset: 2px;
 }
 
@@ -107,3 +106,87 @@ html {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* Custom animations for education section */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+  animation: fadeIn 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+

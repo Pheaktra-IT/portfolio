@@ -53,12 +53,12 @@ const Header: React.FC = () => {
           ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg shadow-sm border-b border-gray-100 dark:border-gray-800 dark:text-white text-gray-900"
           : "bg-transparent"
       }`}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link
             to="/"
-            className="text-xl font-bold text-gray-900 dark:text-white">
+            className="text-xl font-bold text-gray-900 dark:text-white uppercase">
             {t("heroTitle")}
           </Link>
 

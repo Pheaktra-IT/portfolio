@@ -1,16 +1,4 @@
 @import "tailwindcss";
-/* Custom animations and styles */
-/* Add to your <head> */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-.dark {
-  --tw-bg-opacity: 1;
-  background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
-}
-html{
-  font-family: "Roboto", sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
 
 @keyframes blob {
   0% {
@@ -39,48 +27,46 @@ html{
   animation-delay: 4s;
 }
 
-/* Grid pattern background */
+/* Grid pattern background with improved dark mode contrast */
 .bg-grid-pattern {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 
-/* Dark mode grid pattern */
 .dark .bg-grid-pattern {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px
-    ),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
-/* Smooth transitions for all elements */
+/* Enhanced dark mode transitions */
 * {
   transition-property: color, background-color, border-color,
-    text-decoration-color, fill, stroke;
+    text-decoration-color, fill, stroke, opacity, transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
+  transition-duration: 200ms;
 }
 
-/* Custom scrollbar */
+/* Improved dark mode scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100 dark:bg-gray-800;
+  @apply bg-gray-100 dark:bg-gray-900;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+  @apply bg-gray-300 dark:bg-gray-700 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-400 dark:bg-gray-500;
+  @apply bg-gray-400 dark:bg-gray-600;
 }
 
-/* Focus styles */
+/* Dark mode focus styles */
 button:focus,
 input:focus,
 textarea:focus,
@@ -89,25 +75,34 @@ select:focus {
   outline-offset: 2px;
 }
 
-/* Smooth scroll behavior */
+.dark button:focus,
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  outline-color: theme("colors.blue.400");
+}
+
+/* Smooth scroll behavior with dark mode consideration */
 html {
   scroll-behavior: smooth;
+  @apply bg-white dark:bg-gray-900;
 }
 
-/* Text selection */
+/* Enhanced text selection for dark mode */
 ::selection {
-  @apply bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-100;
+  @apply bg-blue-100 dark:bg-blue-800 text-blue-900 dark:text-blue-50;
 }
 
-/* Line clamp utility */
+/* Line clamp utility with dark mode text color */
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  @apply text-gray-800 dark:text-gray-200;
 }
 
-/* Custom animations for education section */
+/* Custom animations with dark mode support */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -190,3 +185,63 @@ html {
   opacity: 0;
 }
 
+/* Additional dark mode utilities */
+.dark .text-muted {
+  @apply text-gray-400;
+}
+
+.dark .bg-surface {
+  @apply bg-gray-800;
+}
+
+.dark .border-surface {
+  @apply border-gray-700;
+}
+
+.dark .shadow-surface {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode placeholder text */
+.dark ::placeholder {
+  @apply text-gray-400;
+}
+
+.dark :-ms-input-placeholder {
+  @apply text-gray-400;
+}
+
+.dark ::-ms-input-placeholder {
+  @apply text-gray-400;
+}
+
+/* Dark mode code blocks */
+.dark pre {
+  @apply bg-gray-800 border-gray-700;
+}
+
+.dark code {
+  @apply text-gray-200;
+}
+
+/* Dark mode tables */
+.dark table {
+  @apply border-gray-700;
+}
+
+.dark th {
+  @apply bg-gray-800 text-gray-200 border-gray-700;
+}
+
+.dark td {
+  @apply border-gray-700;
+}
+
+/* Dark mode links */
+.dark a {
+  @apply text-blue-400;
+}
+
+.dark a:hover {
+  @apply text-blue-300;
+}

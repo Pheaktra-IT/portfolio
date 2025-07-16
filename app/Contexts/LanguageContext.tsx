@@ -80,14 +80,18 @@ const translations = {
     sendBtn: "Send Message",
 
     // Footer
-    footerTitle: "John Doe",
-    footerSubtitle: "Full-Stack Developer & UI/UX Designer",
+    footerTitle: "Chheang Pheaktra",
+    footerSubtitle: "Front-End Developer & UI/UX Designer",
     allRights: "All rights reserved",
 
     // Education Section
     educationTitle: "Education",
     educationSubtitle: "My academic journey and qualifications",
     achievements: "Key Achievements",
+    //sweetaler
+    successTitle: "Success!",
+    successMessage: "Your message has been sent successfully!",
+    successButton: "OK",
   },
   km: {
     // Navigation
@@ -167,6 +171,9 @@ const translations = {
     educationTitle: "ការសិក្សា",
     educationSubtitle: "ដំណើរការសិក្សា និងគុណវុឌ្ឍិរបស់ខ្ញុំ",
     achievements: "សមិទ្ធិផលសំខាន់ៗ",
+    successTitle: "ជោគជ័យ!",
+    successMessage: "សាររបស់អ្នកត្រូវបានផ្ញើដោយជោគជ័យ!",
+    successButton: "យល់ព្រម",
   },
 };
 

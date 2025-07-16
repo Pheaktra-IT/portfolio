@@ -9,7 +9,7 @@ import {
   Twitter,
 } from "lucide-react";
 import { useLanguage } from "../Contexts/LanguageContext";
-
+import Swal from "sweetalert2";
 const Contact: React.FC = () => {
   const { t } = useLanguage();
   const [formData, setFormData] = useState({
@@ -27,10 +27,23 @@ const Contact: React.FC = () => {
       [e.target.name]: e.target.value,
     });
   };
-
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
+    Swal.fire({
+      title: t("successTitle") || "Success!",
+      text: t("successMessage") || "Your message has been sent successfully!",
+      icon: "success",
+      confirmButtonText: t("successButton") || "OK",
+      confirmButtonColor: "#3b82f6", 
+      background: document.documentElement.classList.contains("dark")
+        ? "#1f2937"
+        : "#ffffff",
+      color: document.documentElement.classList.contains("dark")
+        ? "#ffffff"
+        : "#111827",
+    });
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
 

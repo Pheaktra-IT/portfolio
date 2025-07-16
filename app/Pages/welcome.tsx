@@ -37,7 +37,7 @@ const Welcome: React.FC = () => {
           </div>
 
           {/* Main Content */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight drop-shadow-sm">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight drop-shadow-sm uppercase">
             {t("heroTitle")
               .split(" ")
               .map((word, index) => (
